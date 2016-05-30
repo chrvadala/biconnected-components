@@ -20,6 +20,7 @@ class Graph {
 
   constructor(v) {
     this.count = 0; // count is number of biconnected components
+    this.subgraphs = []; //biconnected components
     this.time = 0;  // time is used to find discovery times
 
     this.V = v;     // No. of vertices
@@ -78,13 +79,18 @@ class Graph {
         // If u is an articulation point,
         // pop all edges from stack till u -- v
         if ((disc[u] == 1 && this.children > 1) || (disc[u] > 1 && low[v] >= disc[u])) {
+          let subgraph = [];
           while (st[st.length - 1].u != u || st[st.length - 1].v != v) {
-            console.log(st[st.length - 1].u + "--" + st[st.length - 1].v + " ");
+            subgraph.push(st[st.length - 1]);
+            //console.log(st[st.length - 1].u + "--" + st[st.length - 1].v + " ");
             st.splice(st.length - 1, 1);
           }
 
-          console.log(st[st.length - 1].u + "--" + st[st.length - 1].v + " ");
-          console.log()
+          subgraph.push(st[st.length - 1]);
+          //console.log(st[st.length - 1].u + "--" + st[st.length - 1].v + " ");
+          this.subgraphs.push(subgraph);
+          subgraph = [];
+          //console.log()
           st.splice(st.length - 1, 1);
 
           this.count++;
@@ -123,14 +129,18 @@ class Graph {
       let j = 0;
 
       // If stack is not empty, pop all edges from stack
+      let subgraph = [];
       while (st.length > 0) {
         j = 1;
-        console.log(st[st.length - 1].u + "--" + st[st.length - 1].v + " ");
+        subgraph.push(st[st.length - 1]);
+        //console.log(st[st.length - 1].u + "--" + st[st.length - 1].v + " ");
         st.splice(st.length - 1, 1);
       }
 
       if (j == 1) {
-        console.log();
+        this.subgraphs.push(subgraph);
+        subgraph = [];
+        //console.log();
         this.count++;
       }
     }

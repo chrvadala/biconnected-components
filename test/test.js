@@ -36,11 +36,10 @@ describe('test biconnected components', function () {
     g.addEdge(11, 10);
 
 
-    console.log(g);
-
     g.BCC();
 
     console.log("Above are " + g.count + " biconnected components in graph");
+    console.log(g.subgraphs);
 
   });
 });
