@@ -52,7 +52,7 @@ class Graph {
   //             discovery time) that can be reached from subtree
   //             rooted with current vertex
   // *st -- >> To store visited edges
-  BCCUtil(u, disc, low, st, parent) {
+  _BCCUtil(u, disc, low, st, parent) {
     // Initialize discovery time and low value
     disc[u] = low[u] = ++this.time;
     this.children = 0;
@@ -68,7 +68,7 @@ class Graph {
 
         // store the edge in stack
         st.push(new Edge(u, v));
-        this.BCCUtil(v, disc, low, st, parent);
+        this._BCCUtil(v, disc, low, st, parent);
 
         // Check if the subtree rooted with 'v' has a
         // connection to one of the ancestors of 'u'
@@ -124,7 +124,7 @@ class Graph {
 
     for (let i = 0; i < V; i++) {
       if (disc[i] == -1)
-        this.BCCUtil(i, disc, low, st, parent);
+        this._BCCUtil(i, disc, low, st, parent);
 
       let j = 0;
 
