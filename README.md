@@ -36,6 +36,17 @@ Find biconnected component in a graph using algorithm by John Hopcroft and Rober
 
   console.log(g.count);
   console.log(g.subgraphs);
+
+
+  //  output
+  //  [{u: 4, v: 2}, {u: 3, v: 4}, {u: 3, v: 1}, {u: 2, v: 3}, {u: 1, v: 2}],
+  //  [{u: 8, v: 9}],
+  //  [{u: 8, v: 5}, {u: 7, v: 8}, {u: 5, v: 7}],
+  //  [{u: 6, v: 0}, {u: 5, v: 6}, {u: 1, v: 5}, {u: 0, v: 1}],
+  //  [{u: 10, v: 11}]
+
+
+
 ```
 
 
