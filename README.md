@@ -2,6 +2,10 @@
 Find biconnected component in a graph using algorithm by John Hopcroft and Robert Tarjan
 
 ```
+npm install --save biconnected-components
+```
+
+```
   let g = new Graph(12);
   g.addEdge(0, 1);
   g.addEdge(1, 0);
