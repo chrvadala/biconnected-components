@@ -2,7 +2,7 @@
   "name": "biconnected-components",
   "version": "1.0.0",
   "description": "Find biconnected component in a graph using algorithm by John Hopcroft and Robert Tarjan",
-  "main": "index.js",
+  "main": "src/graph.js",
   "scripts": {
     "test": "mocha"
   },
