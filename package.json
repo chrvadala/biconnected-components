@@ -1,6 +1,6 @@
 {
   "name": "biconnected-components",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Find biconnected component in a graph using algorithm by John Hopcroft and Robert Tarjan",
   "main": "src/graph.js",
   "scripts": {
